@@ -22,7 +22,15 @@ class Index
         $data = $this->sign($app,$user_id);
         echo $data['flv'];
     }
-
+    /**
+     * m3u8格式
+     */
+    public function m3u8(){
+        $app = 'dc';
+        $user_id = '56895';
+        $data = $this->sign($app,$user_id);
+        echo $data['m3u8'];
+    }
     /**
      * 推流
      */
