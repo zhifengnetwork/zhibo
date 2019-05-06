@@ -27,7 +27,11 @@
 		console.log(url);
 		if(!url || url == undefined){
 			url = 'rtmp://live.hkstv.hk.lxdns.com/live/hks'
+		}else{
+			url = decodeURIComponent(url);
+			//存在即解码
 		}
+
 		console.log(url);
 
 		var videoObject = {
