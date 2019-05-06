@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css">
+    <style>
+        .tt{
+            -webkit-transform:rotate(90deg);
+        }
+    </style>
+</head>
+
+<body style="background-color:white;">
+    <div class="aui-content" style="padding:30px 15px 15px 15px;">
+        <div class="aui-row">
+            <div class="aui-col-xs-12">
+                <video id="videoElement" width=100% height=100% controls>
+                    <source id="static-video" src="" />
+                </video>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/flv.js"></script>
+
+<script type="text/javascript">
+    apiready = function() {
+        var params = api.pageParam;
+        var url = params['url'];
+        var url_index = url.lastIndexOf('.');
+        var type = url.substring(url_index+1,url.length);
+
+        if(type == 'flv'){
+            var videoElement = document.getElementById('videoElement');
+
+            if (flvjs.isSupported()) {
+                var flvPlayer = flvjs.createPlayer({
+                    type: type,
+                    isLive:true,
+                    url: url,
+               });
+               flvPlayer.attachMediaElement(videoElement);
+               flvPlayer.load();
+               flvPlayer.play();
+
+               videoElement.onpause = function(){
+                   flvPlayer.unload();
+               };
+               videoElement.onplay = function(){
+                   flvPlayer.load();
+                   flvPlayer.play();
+               }
+           }
+       }else{
+           var videoElement = document.getElementById('videoElement');
+           videoElement.src=url;
+           videoElement.load();
+           videoElement.play();
+       }
+    };
+</script>
+
+</html>
