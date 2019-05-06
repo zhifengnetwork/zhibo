@@ -31,12 +31,25 @@
 
 <script type="text/javascript">
     apiready = function() {
-        var params = api.pageParam;
-        var url = params['url'];
-        var url_index = url.lastIndexOf('.');
-        var type = url.substring(url_index+1,url.length);
+        // var params = api.pageParam;
+        // var url = params['url'];
+        // var url_index = url.lastIndexOf('.');
+        // var type = url.substring(url_index+1,url.length);
 
-        if(type == 'flv'){
+
+        //获取url的播放地址
+		var url = GetUrlParam('url');
+		console.log(url);
+		if(!url || url == undefined){
+			url = 'rtmp://live.hkstv.hk.lxdns.com/live/hks'
+		}else{
+			url = decodeURIComponent(url);
+			//存在即解码
+		}
+
+		console.log(url);
+
+        // if(type == 'flv'){
             var videoElement = document.getElementById('videoElement');
 
             if (flvjs.isSupported()) {
@@ -56,7 +69,7 @@
                    flvPlayer.load();
                    flvPlayer.play();
                }
-           }
+        //    }
        }else{
            var videoElement = document.getElementById('videoElement');
            videoElement.src=url;
@@ -64,6 +77,29 @@
            videoElement.play();
        }
     };
+
+
+    function GetUrlParam(paraName) {
+			var url = document.location.toString();
+			var arrObj = url.split("?");
+
+			if (arrObj.length > 1) {
+				var arrPara = arrObj[1].split("&");
+				var arr;
+
+				for (var i = 0; i < arrPara.length; i++) {
+					arr = arrPara[i].split("=");
+
+					if (arr != null && arr[0] == paraName) {
+						return arr[1];
+					}
+				}
+				return "";
+			}
+			else {
+				return "";
+			}
+		}
 </script>
 
 </html>
