@@ -3,3 +3,4 @@
 .idea
 .well-known
 runtime
+application/database.php
