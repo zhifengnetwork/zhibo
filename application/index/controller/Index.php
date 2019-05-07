@@ -58,7 +58,8 @@ class Index extends Controller
 
                 $data = $this->sign($app,$user_id);
                 $data['user_id'] = $user_id;
-                M('tp_zhibo_user')->add($data);
+                $id = M('tp_zhibo_user')->add($data);
+                $data['id'] = $id;
             }
             
             $this->redirect('play?id='.$data['id']);
