@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>直播</title>
+    <link rel="stylesheet" href="/public/weui.min.css" />
+
+</head>
+<style>
+    .page {
+        margin: 10px 0 0 0;
+    }
+</style>
+
+<body>
+
+    <div class="page">
+
+
+        <div class="weui-cells__title">推流地址</div>
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <textarea class="weui-textarea" rows="3">{$data.tui}</textarea>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="weui-cells__title">播流地址</div>
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <textarea class="weui-textarea" rows="3">{$data.rtmp}</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="button-sp-area">
+            <a href="/play.html?url={$rtmp}" class="weui-btn weui-btn_primary">去播放</a>
+        </div>
+
+        
+        <div class="weui-cells__title">播流地址</div>
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <textarea class="weui-textarea" rows="3">{$data.flv}</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="button-sp-area">
+            <a href="/play.html?url={$flv}" class="weui-btn weui-btn_primary">去播放</a>
+        </div>
+
+
+        <div class="weui-cells__title">播流地址</div>
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <textarea class="weui-textarea" rows="3">{$data.m3u8}</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-sp-area">
+            <a href="/sample/rtmp.html?url={$m3u8}" class="weui-btn weui-btn_primary">去播放</a>
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

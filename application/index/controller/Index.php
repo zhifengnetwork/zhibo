@@ -1,7 +1,8 @@
 <?php
 namespace app\index\controller;
+use think\Controller;
 
-class Index
+class Index extends Controller
 {
 
     /**
@@ -9,7 +10,7 @@ class Index
     */
     public function  __construct() {
       
-
+        parent::__construct();
        
     }
 
@@ -46,12 +47,41 @@ class Index
      */
     public function index()
     {
-        $app = 'dc';
-        $user_id = '56895';
-        $data = $this->sign($app,$user_id);
-        dump($data);
+
+        if($this->request->method() == 'POST'){
+
+            $app = 'dc';
+            $user_id = I('user_id');
+
+            $data = M('tp_zhibo_user')->where(['user_id'=>$user_id])->find();
+            if(!$data){
+
+                $data = $this->sign($app,$user_id);
+                $data['user_id'] = $user_id;
+                M('tp_zhibo_user')->add($data);
+            }
+            
+            $this->redirect('play?id='.$data['id']);
+            
+            exit;
+        }
+
+        return $this->fetch();
     }
 
+    public function play(){
+        $id = I('id');
+
+        $data = M('tp_zhibo_user')->where(['id'=>$id])->find();
+
+        $this->assign('data',$data);
+
+        $this->assign('rtmp',urlencode($data['rtmp']));
+        $this->assign('flv',urlencode($data['flv']));
+        $this->assign('m3u8',urlencode($data['m3u8']));
+
+        return $this->fetch();
+    }
 
     /**
      * 生成签名
@@ -59,9 +89,7 @@ class Index
     private function sign($app,$user_id)
     {
         $sercet = '0cN03mTxm3';
-        // $time = time() + 300 * 60 * 60;
-
-        $time = '1557157678';
+        $time = time() + 300 * 60 * 60;
 
         //gWsPYhPRVT
 
@@ -77,6 +105,7 @@ class Index
         $m3u8_key = $this->get_auth_key($app,$user_id,'.m3u8',$time,$sercet);
         $data['m3u8'] = 'http://play.zhifengwangluo.com/'.$app.'/user'.$user_id.'.m3u8?auth_key='.$m3u8_key;
 
+        $data['time'] = $time;
        return $data;        
     }
 

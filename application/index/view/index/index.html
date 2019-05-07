@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>直播</title>
+    <link rel="stylesheet" href="/public/weui.min.css" />
+
+</head>
+<style>
+    .page {
+        margin: 10px 0 0 0;
+    }
+</style>
+
+<body>
+
+    <div class="page">
+
+        <form method="POST">
+
+            <div class="weui-cells__title">输入ID</div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">输入ID</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="number" name="user_id" pattern="[0-9]*" placeholder="请输入ID" />
+                </div>
+            </div>
+
+            <div class="button-sp-area">
+                <button type="submit" class="weui-btn weui-btn_primary">开启直播</button>
+            </div>
+
+        </form>
+    </div>
+
+
+</body>
+
+</html>

@@ -16,8 +16,20 @@
 <body>
     <div class="prism-player" id="J_prismPlayer"></div>
     <script>
-        var url = 'http://play.zhifengwangluo.com/dc/user56895.m3u8?auth_key=1557157678-0-0-bb98df5d61f4e345128fad064798f1fd';
+        //var url = 'http://play.zhifengwangluo.com/dc/user56895.m3u8?auth_key=1557157678-0-0-bb98df5d61f4e345128fad064798f1fd';
         
+        //获取url的播放地址
+		var url = GetUrlParam('url');
+		console.log(url);
+		if(!url || url == undefined){
+			url = 'rtmp://live.hkstv.hk.lxdns.com/live/hks'
+		}else{
+			url = decodeURIComponent(url);
+			//存在即解码
+		}
+
+		console.log(url);
+
         // $.ajax({
         //     url: "https://zhibo.zhifengwangluo.com/index/index/flv",
         //     type: 'get',
@@ -30,7 +42,27 @@
         //     }
         // })
 
+        function GetUrlParam(paraName) {
+			var url = document.location.toString();
+			var arrObj = url.split("?");
 
+			if (arrObj.length > 1) {
+				var arrPara = arrObj[1].split("&");
+				var arr;
+
+				for (var i = 0; i < arrPara.length; i++) {
+					arr = arrPara[i].split("=");
+
+					if (arr != null && arr[0] == paraName) {
+						return arr[1];
+					}
+				}
+				return "";
+			}
+			else {
+				return "";
+			}
+		}
 
         var player = new Aliplayer({
             id: 'J_prismPlayer',
