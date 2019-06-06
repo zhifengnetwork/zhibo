@@ -144,8 +144,8 @@ return [
 
     // 视图输出字符串内容替换
     'view_replace_str'       => [
-        '__PUBLIC__' => 'public',
-        '__STATIC__' =>  'public/static',
+        '__PUBLIC__' => '/public',
+        '__STATIC__' =>  '/public/static',
         '__HOST__' => $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/index',
     ],
     // 默认跳转页面对应的模板文件
