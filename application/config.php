@@ -143,7 +143,15 @@ return [
     ],
 
     // 视图输出字符串内容替换
-    'view_replace_str'       => [],
+    'view_replace_str'       => [
+        '__PUBLIC__' => '/public',
+        '__STATIC__' =>  '/public/static',
+<<<<<<< HEAD
+        '__HOST__' => "",
+=======
+        '__HOST__' => $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/index',
+>>>>>>> 23370709ea26708c96b76991f7975901e8fb68b2
+    ],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
     'dispatch_error_tmpl'    => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
