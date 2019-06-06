@@ -22,8 +22,6 @@ class Play extends Controller
      * index
      */
     public function index(){
-
-        
         return $this->fetch();
     }
     
