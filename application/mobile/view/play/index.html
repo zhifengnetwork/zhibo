@@ -5,23 +5,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>直播</title>
+    <title>主播-直播间</title>
     <script src="__STATIC__/js/rem.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="__STATIC__/css/base.css" />
-    <style>
-        body{
-            background-color: #000;
-        }
-        .txt3{
-            font-size: 50px;
-    	-webkit-text-stroke: .05rem red;
-        -webkit-text-fill-color: transparent;
-        background-color: #ccc;
-    }
-    </style>
+    <link rel="stylesheet" href="__STATIC__/css/play/play.css">
 </head>
 <body>
-    
-    <div class="txt3">小腊肉</div>
+    <div class="wrapper">
+        <!-- 直播视频 -->
+        <div class="live-wrap">
+            <img src="__STATIC__/images/play/00live-bg.png" />
+        </div>
+
+        <!-- 直播间内容 -->
+        <div class="live-room">
+
+            <div class="topBar">
+                <div class="live-status">
+                    <span class="status">直播中</span>
+                    <i class="dot-red"></i>
+                    <span class="time">01:33:23</span>
+                </div>
+                <div class="liveId">
+                    <span class="shop-name">DC商城</span>
+                    <span class="id">ID:123456</span>
+                </div>
+                <div class="closeBtn"></div>
+            </div>
+
+            <div class="anchor-part">
+                <span class="viewer"><i class="icon"></i>50.1万</span>
+                <span class="follow"><i class="icon"></i>9999</span>
+            </div>
+
+            <!-- 聊天窗口 -->
+            <div class="chat-wrap">
+                
+                <!-- 礼物 -->
+                <div class="showGift-wrap">
+                    <div class="gift-item">
+                        <span class="gift-icon"><img src="__STATIC__/images/play/gift-icon-1.png" /></span>
+                        <span class="gift-count">x2</span>
+                        <span class="viewer-name">美丽的小猪猪</span>
+                    </div>
+                </div>
+
+                <!-- 弹幕滚动 -->
+                <div class="barrage-scroll">
+                    <ul class="barrage-list">
+                        <li class="dm-item">
+                            <span class="level level-1"></span>
+                            <span class="viewer-name">小猪猪朋友：</span>
+                            <span class="barrage-con">你好吗</span>
+                        </li>
+                        <li class="dm-item">
+                            <span class="level level-2"></span>
+                            <span class="viewer-name">小猪猪朋友：</span>
+                            <span class="barrage-con">你好吗</span>
+                        </li>
+                        <li class="dm-item">
+                            <span class="level level-3"></span>
+                            <span class="viewer-name">小猪猪朋友：</span>
+                            <span class="barrage-con">你好吗</span>
+                        </li>
+                        <li class="dm-item">
+                            <span class="level level-4"></span>
+                            <span class="viewer-name">小猪猪朋友：</span>
+                            <span class="barrage-con">你好吗</span>
+                        </li>
+                        <li class="dm-item">
+                            <span class="level level-4"></span>
+                            <span class="viewer-name">小猪猪朋友：</span>
+                            <span class="barrage-con">你好吗</span>
+                        </li>
+                        <li class="dm-item">
+                            <span class="level level-5"></span>
+                            <span class="viewer-name">小猪猪朋友：</span>
+                            <span class="barrage-con">你好吗</span>
+                        </li>
+                        <li class="dm-item">
+                            <span class="level level-6"></span>
+                            <span class="viewer-name">小猪猪朋友：</span>
+                            <span class="barrage-con">你好吗</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 发送弹幕 -->
+                <div class="chat-operate">
+                    <div class="send-redPacket"></div>
+                    <div class="msg-input">
+                        <input type="text" placeholder="说点什么...">
+                    </div>
+                    <div class="endLive">结束直播</div>
+                </div>
+                
+            </div>
+
+            <!-- 红包弹窗 -->
+            <div class="mask">
+                <div class="popup">
+                    <div class="popup-header">
+                        <h3>手气红包</h3>
+                    </div>
+                    <div class="popup-body">
+                        <div class="group-wrap">
+                            <span class="label">总金额</span>
+                            <span class="right">
+                                <input type="text" placeholder="0.00">
+                            元</span>
+                        </div>
+                        <div class="group-wrap">
+                            <span class="label">红包个数</span>
+                            <span class="right">
+                                <input type="text" placeholder="填写红包个数">
+                            个</span>
+                        </div>
+                    </div>
+                    <div class="popup-footer">
+                        <span class="send-btn">发红包</span>
+                    </div>
+                    <div class="close-btn"></div>
+                </div>
+            </div>
+        
+
+        </div>
+    </div>
+    <script src="__STATIC__/js"></script>
+    <script>
+        $(function(){
+            $('.send-redPacket').click(function(){
+
+            })
+        })
+    </script>
 </body>
 </html>
