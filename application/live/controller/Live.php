@@ -1,5 +1,6 @@
 <?php
 namespace app\live\controller;
+use app\live\logic\AccessToken;
 use think\Controller;
 use app\live\logic\RtmTokenBuilder;
 
@@ -34,7 +35,8 @@ class Live extends Controller
         $account = $_POST['channel'] ?? "1024";
 
         $builder = new RtmTokenBuilder($appID, $appCertificate, $account);
-        $builder->setPrivilege(AccessToken::Privileges["kRtmLogin"], 0);
+        $AccessToken=new AccessToken();
+        $builder->setPrivilege($AccessToken::Privileges["kRtmLogin"], 0);
         echo $builder->buildToken();
 
     }
