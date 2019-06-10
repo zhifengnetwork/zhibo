@@ -24,5 +24,17 @@ class Play extends Controller
     public function index(){
         return $this->fetch();
     }
+
+    // 观众-直播间
+    public function viewer_room(){
+        return $this->fetch();
+    }
+
+    // 结束直播
+    public function end_life(){
+        return $this->fetch();
+    }
+
+  
     
 }

@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>主播-直播间</title>
+    <title>观众-直播间</title>
     <script src="__STATIC__/js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="__STATIC__/css/swiper.css">
     <link rel="stylesheet" type="text/css" href="__STATIC__/css/base.css" />
-    <link rel="stylesheet" href="__STATIC__/css/play/play.css">
+    <link rel="stylesheet" href="__STATIC__/css/play/viewer_room.css">
 </head>
 <body>
     <div class="wrapper">
@@ -21,10 +22,9 @@
         <div class="live-room">
 
             <div class="topBar">
-                <div class="live-status">
-                    <span class="status">直播中</span>
-                    <i class="dot-red"></i>
-                    <span class="time">01:33:23</span>
+                <div class="viewer-info">
+                    <img class="avatar" src="__STATIC__/images/play/00viewer-avatar.png" />
+                    <span class="name">美丽的小猪猪</span>
                 </div>
                 <div class="liveId">
                     <span class="shop-name">DC商城</span>
@@ -90,14 +90,21 @@
                         </li>
                     </ul>
                 </div>
+                
+                <!-- 商品链接 -->
+                <div class="goods-links">
+                    商品链接：<a href="http://zhibo.com/mobile/play/viewer_room">http://zhibo.com/mobile/play/viewer_room</a>
+                </div>
 
                 <!-- 发送弹幕 -->
                 <div class="chat-operate">
-                    <div class="send-redPacket"></div>
                     <div class="msg-input">
                         <input type="text" placeholder="说点什么...">
                     </div>
-                    <div class="endLive"><a href="./end_life.html">结束直播</a></div>
+                    <div class="send-redPacket"></div>
+                    <div class="cart"></div>
+                    <div class="share"></div>
+                    <div class="gift"></div>
                 </div>
                 
             </div>
@@ -113,16 +120,10 @@
                 </div>
                 <div class="popup-body">
                     <div class="group-wrap">
-                        <span class="label">总金额</span>
+                        <span class="label">单个金额</span>
                         <span class="right">
                             <input type="text" placeholder="0.00">
                         元</span>
-                    </div>
-                    <div class="group-wrap">
-                        <span class="label">红包个数</span>
-                        <span class="right">
-                            <input type="text" placeholder="填写红包个数">
-                        个</span>
                     </div>
                 </div>
                 <div class="popup-footer">
@@ -130,21 +131,86 @@
                 </div>
                 <div class="close-btn"></div>
             </div>
+        </div>
+   
+        <!-- 赠送礼物 -->
+        <div class="gift-wrap">
+            <div class="thead"><h3>赠送礼物</h3><span class="close"></span></div>
+            <div class="tbody">
+                <div class="swiper-container gift-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-2.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-3.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-2.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-3.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-2.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-3.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-2.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-3.png" /></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-2.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-3.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-2.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-3.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-2.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-3.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-2.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-3.png" /></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-2.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-3.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-2.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-3.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-2.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-3.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-2.png" /></div>
+                            <div class="gift-item"><img src="__STATIC__/images/play/gift-icon-3.png" /></div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>                    
 
+            </div>
+            <div class="sendBtn">发送</div>
         </div>
 
     </div>
+    
+  
+
     <script src="__STATIC__/js/jquery-3.3.1.min.js"></script>
+    <script src="__STATIC__/js/swiper.js"></script>
+
     <script>
         $(function(){
+            //礼物滑动
+            var swiper = new Swiper('.gift-container', {
+				loop: true,
+				pagination: '.swiper-pagination',
+				paginationClickable: true,
+				autoplayDisableOnInteraction: false
+			});
+
             // 主播发红包
             $('.send-redPacket').click(function(){
                 $(".mask,.redPacket-popup").show();
-            })
+            });
 
             // 关闭发红包
             $(".close-btn").click(function(){
                 $(".mask,.redPacket-popup").hide()
+            });
+
+            // 礼物显示
+            $(".gift").click(function(){
+                $(".gift-wrap").css("visibility","visible");
+            })
+
+            $(".gift-wrap .close").click(function(){
+                $(".gift-wrap").css("visibility","hidden");
             })
 
         })
