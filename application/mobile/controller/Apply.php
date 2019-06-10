@@ -2,7 +2,7 @@
 namespace app\mobile\controller;
 use think\Controller;
 
-class Index extends Controller
+class Apply extends Controller
 {
 
     /**
@@ -19,21 +19,10 @@ class Index extends Controller
     }
 
     /**
-     * index
+     * apply
      */
-    public function index(){
+    public function apply(){
         return $this->fetch();
     }
-    /**
-     * livelist
-     */
-    public function livelist(){
-        return $this->fetch();
-    }
-    /**
-     * live
-     */
-    public function live(){
-        return $this->fetch();
-    }
+    
 }
