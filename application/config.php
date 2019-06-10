@@ -146,7 +146,7 @@ return [
     'view_replace_str'       => [
         '__PUBLIC__' => '/public',
         '__STATIC__' =>  '/public/static',
-        '__HOST__' => $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/index',
+        '__HOST__' => "",
     ],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',

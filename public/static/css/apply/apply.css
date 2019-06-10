@@ -31,7 +31,7 @@
     font-size: .2rem;
 }
 .apply_grade_mask{
-    /* display: none; */
+    display: none;
     position: fixed;
     left: 0;
     top: 0;
@@ -42,17 +42,30 @@
 }
 .mask_content{
     position: absolute;
-    /* bottom: -46%; */
+    bottom: -100%;
     bottom: 0;
     width: 100%;
 }
-.mask_content_back{
+.mask_content_title{
+    position: relative;
+    padding-top: .2rem;
+    text-align: center;
     background: #fff;
-    text-align: right;
-    padding: .2rem .2rem 0 0; 
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+}
+.mask_content_back{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: .6rem;
+    height: .6rem;
+    line-height: .65rem;
+    color: #ccc;
+}
+.mask_content_icon{
+    font-size: .4rem;
 }
 .mask_content .active{
     color: #f60ea1;
@@ -115,6 +128,37 @@
     text-align: center;
     line-height: .8rem;
     border-radius: .1rem;
+    /*从左到右的渐变色：*/
+	background:-webkit-linear-gradient(left,#f8566c,#fa3479);
+	background:-o-linear-gradient(right,#f8566c,#fa3479);
+	background:-moz-linear-gradient(right,#f8566c,#fa3479);
+	background: linear-gradient(to right,#f8566c,#fa3479);
+}
+/* 审核中 */
+.review,.prosperity{
+    display: none;
+    text-align: center;
+}
+.review_imgwrap,.prosperity_imgwrap{
+    margin: 2rem auto 0;
+    width: 3.4rem;
+    height: 3.4rem;
+}
+.review_img,.prosperity_img{
+    width: 100%;
+    height: 100%;
+}
+.review_text,.prosperity_text{
+    margin-top: .6rem;
+    letter-spacing: .02rem;
+}
+/* 审核成功 */
+.prosperity_btn{
+    color: #fff;
+    text-align: center;
+    line-height: .8rem;
+    border-radius: .1rem;
+    margin: 2rem .28rem 0;
     /*从左到右的渐变色：*/
 	background:-webkit-linear-gradient(left,#f8566c,#fa3479);
 	background:-o-linear-gradient(right,#f8566c,#fa3479);
