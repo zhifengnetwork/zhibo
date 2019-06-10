@@ -6,9 +6,9 @@
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>观众-直播间</title>
-    <script src="__STATIC__/js/rem.js" type="text/javascript" charset="utf-8"></script>
-    <link rel="stylesheet" href="__STATIC__/css/swiper.css">
-    <link rel="stylesheet" type="text/css" href="__STATIC__/css/base.css" />
+    <script src="__STATIC__/js/public/rem.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="__STATIC__/css/public/swiper.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/public/base.css" />
     <link rel="stylesheet" href="__STATIC__/css/play/viewer_room.css">
 </head>
 <body>
@@ -97,15 +97,23 @@
                 </div>
 
                 <!-- 发送弹幕 -->
-                <div class="chat-operate">
+                <div class="chat-operate" >
                     <div class="msg-input">
-                        <input type="text" placeholder="说点什么...">
+                        <span>说点什么...</span>
+                        <!-- <input type="text" placeholder="说点什么..."> -->
                     </div>
                     <div class="send-redPacket"></div>
                     <div class="cart"></div>
                     <div class="share"></div>
                     <div class="gift"></div>
                 </div>
+
+                <!-- 输入框 -->
+                <div class="send-group">
+                    <div class="textarea" contenteditable="true" placeholder ="说点什么"></div>
+                    <div class="send-btn">发送</div>
+                </div>
+                
                 
             </div>
 
@@ -181,8 +189,8 @@
     
   
 
-    <script src="__STATIC__/js/jquery-3.3.1.min.js"></script>
-    <script src="__STATIC__/js/swiper.js"></script>
+    <script src="__STATIC__/js/public/jquery-3.3.1.min.js"></script>
+    <script src="__STATIC__/js/public/swiper.js"></script>
 
     <script>
         $(function(){
@@ -209,8 +217,41 @@
                 $(".gift-wrap").css("visibility","visible");
             })
 
+            // 礼物隐藏
             $(".gift-wrap .close").click(function(){
                 $(".gift-wrap").css("visibility","hidden");
+            })
+
+            $(".msg-input").click(function(){
+                $(".chat-operate").hide();
+                $(".send-group").css("visibility","visible");
+            })
+
+             //改变发送按钮样式
+            $('.send-group .textarea').keyup(function(){
+                if($(this).html()!=''){
+                    $('.send-group .send-btn').css('opacity','1')
+                }else{
+                    $('.send-group .send-btn').css('opacity','.5')
+                }
+            })
+
+            // 发送消息
+            $('.send-group .send-btn').click(function(){
+                let str = '';
+                let text = $('.send-group .textarea').html();
+                if(text == ''){
+                    return;
+                }
+                str += `<li class="dm-item">
+                            <span class="level level-1"></span>
+                            <span class="viewer-name">小猪猪朋友：</span>
+                            <span class="barrage-con">${text}</span>
+                        </li>`
+                $('.barrage-list').append(str);
+                $('.send-group .textarea').html('');
+                $('.send-group .send-btn').css('opacity','.5')
+           
             })
 
         })
