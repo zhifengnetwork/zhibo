@@ -27,7 +27,7 @@
 
 
 .topBar{
-    height: .4rem;
+    /* height: .4rem; */
     padding: 0 .24rem;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -40,23 +40,29 @@
     position: relative;
     margin-bottom: .1rem;
 }
-.topBar .live-status{
+.topBar .viewer-info{
     width: 3.36rem;
-    height: .4rem;
-    line-height: .4rem;
+    height: .88rem;
     font-size: .3rem;
     color: #fff;
-    border-radius: .16rem;
+    border-radius: .34rem;
     background: rgba(0,0,0,.3);
-    padding: 0 .26rem;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+}
+.topBar .viewer-info .avatar{
+    width: .88rem;
+    height: .88rem;
+    border-radius: 50%;
+    margin-right: .25rem;
+    margin-left: -.08rem;
+}
+.topBar .viewer-info .avatar img{
+    width: 100%;
 }
 .topBar .live-status .dot-red{
     width: .11rem;
@@ -139,7 +145,7 @@
     width: 100%;
     padding-left:.24rem;
     box-sizing: border-box;
-    margin-top: 6.2rem;
+    margin-top: 4.8rem;
     position: relative;
     padding-top: 1.08rem;
     box-sizing: border-box;
@@ -236,6 +242,26 @@
     background-size: 100%;
 }
 
+/* 商品链接 */
+.goods-links{
+    width: 92%;
+    height: .6rem;
+    line-height: .6rem;
+    font-size: .26rem;
+    color: #ffffff;
+    margin: 0.2rem auto;
+    border-radius: .25rem;
+    background:rgba(0,0,0,.3);
+    padding: 0 .48rem;
+    box-sizing: border-box;
+    overflow: hidden;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.goods-links a{
+    color: #ffffff;
+}
+
 /* 发送弹幕 */
 .chat-wrap .chat-operate{
     width: 100%;
@@ -264,6 +290,32 @@
     background: rgba(0,0,0,.3) url(../../images/play/money-icon.png) no-repeat center center;
     background-size: .41rem .49rem;
 }
+
+.chat-operate .cart{
+    width: .88rem;
+    height: .88rem;
+    margin-right: .24rem;
+    border-radius: 50%;
+    background: rgba(0,0,0,.3) url(../../images/play/cart-icon.png) no-repeat center center;
+    background-size: .41rem .41rem;
+}
+.chat-operate .share{
+    width: .88rem;
+    height: .88rem;
+    margin-right: .24rem;
+    border-radius: 50%;
+    background: rgba(0,0,0,.3) url(../../images/play/share-icon.png) no-repeat center center;
+    background-size: .41rem .41rem;
+}
+.chat-operate .gift{
+    width: .88rem;
+    height: .88rem;
+    margin-right: .24rem;
+    border-radius: 50%;
+    background:url(../../images/play/gift-icon.png) no-repeat center center;
+    background-size: 100%;
+}
+
 .chat-operate .msg-input{
     -webkit-box-flex: 1;
     -ms-flex: 1;
@@ -275,6 +327,7 @@
     padding: 0 .24rem;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    margin-right: .16rem;
 }
 .chat-operate .msg-input input{
     width: 100%;
@@ -321,7 +374,7 @@
 }
 .popup{
     width: 92%;
-    min-height: 6rem;
+    min-height: 4.5rem;
     background-color: #fff;
     border-radius: .1rem;
     position: absolute;
@@ -393,3 +446,98 @@
     margin-left: -.26rem;
 }
 
+/* 赠送礼物 */
+.gift-wrap{
+    width: 94%;
+    height: 4rem;
+    background: rgba(0,0,0,.6);
+    margin: 0 auto;
+    position: fixed;
+    left: 50%;
+    bottom: 1.3rem;
+    margin-left: -47%;
+    z-index: 100;
+    border-radius: .1rem;
+    visibility: hidden;
+}
+.gift-wrap .thead{
+    text-align: center;
+    color: #ffffff;
+    height: .74rem;
+    line-height: .74rem;
+    position: relative;
+    margin-bottom: .2rem;
+}
+.gift-wrap .thead .close{
+    width: .24rem;
+    height: .14rem;
+    background: url(../../images/play/arrow.png) no-repeat;
+    background-size: 100%;
+    position: absolute;
+    right: .18rem;
+    top: .32rem;
+}
+.gift-wrap .sendBtn{
+    width: .9rem;
+    height: .4rem;
+    text-align: center;
+    color: #ffffff;
+    line-height: .4rem;
+    background: linear-gradient(to right, #f8546d , #fa3579);
+    border-radius: .05rem;
+    position: absolute;
+    right: .18rem;
+    bottom: .13rem;
+}
+
+.gift-wrap  .tbody{
+    width: 100%;
+    height: 3.15rem;
+    padding: 0 .95rem;
+    box-sizing: border-box;
+}
+.gift-wrap .gift-container{
+    width: 100%;
+    height: 100%;
+}
+.gift-wrap .swiper-slide{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-line-pack:start;
+    align-content:flex-start;
+}
+.gift-wrap .gift-item{
+    width: .84rem;
+    height: .84rem; 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: .5rem;    
+    margin-right: .58rem;
+}
+.gift-wrap .gift-item:nth-child(4n+4){
+    margin-right: 0;
+}
+.gift-wrap .gift-item img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+.gift-wrap .swiper-pagination-bullet{
+    width: .08rem;
+    height: .08rem;
+    background-color: #fff;
+    opacity: 1;
+}
+.gift-wrap .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets{
+    bottom: .28rem;
+}
