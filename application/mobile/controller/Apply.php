@@ -2,7 +2,7 @@
 namespace app\mobile\controller;
 use think\Controller;
 
-class Play extends Controller
+class Apply extends Controller
 {
 
     /**
@@ -19,22 +19,10 @@ class Play extends Controller
     }
 
     /**
-     * index
+     * apply
      */
-    public function index(){
+    public function apply(){
         return $this->fetch();
     }
-
-    // 观众-直播间
-    public function viewer_room(){
-        return $this->fetch();
-    }
-
-    // 结束直播
-    public function end_life(){
-        return $this->fetch();
-    }
-
-  
     
 }
