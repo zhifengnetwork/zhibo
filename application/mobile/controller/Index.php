@@ -24,5 +24,11 @@ class Index extends Controller
     public function index(){
         return $this->fetch();
     }
+    /**
+     * livelist
+     */
+    public function livelist(){
+        return $this->fetch();
+    }
     
 }
