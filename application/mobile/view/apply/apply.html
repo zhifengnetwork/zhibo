@@ -71,8 +71,9 @@
         <!-- 上传图片 -->
         <div class="apply_uploading">
             <div class="apply_uploading_imgwrap">
+                <input id="img" type="file" style="position:absolute;left:0;top:0;width:100%;height:100%;border:0;outline:none;opacity:0;z-index:10;">
                 <i class="iconfont uploading_icon">&#xe614;</i>
-                <img class="apply_uploading_img" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2109756402,943807001&fm=27&gp=0.jpg" alt="">
+                <img class="apply_uploading_img" src="__STATIC__/images/public/opacity.png" alt="">
             </div>
             <div class="apply_uploading_text">
                 身份证正面
@@ -80,8 +81,9 @@
         </div>
         <div class="apply_uploading">
             <div class="apply_uploading_imgwrap">
+                <input id="img1" type="file" style="position:absolute;left:0;top:0;width:100%;height:100%;border:0;outline:none;opacity:0;z-index:10;">
                 <i class="iconfont uploading_icon">&#xe614;</i>
-                <!-- <img class="apply_uploading_img" src="__STATIC__/images/play/00live-bg.png" alt=""> -->
+                <img class="apply_uploading_img" src="__STATIC__/images/public/opacity.png" alt="">
             </div>
             <div class="apply_uploading_text">
                 身份证反面
@@ -116,5 +118,43 @@
         </div>
     </div>
     <script src="__STATIC__/js/public/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#img").change(function (e) {
+                for (var i = 0; i < e.target.files.length; i++) {
+                    var file = e.target.files.item(i);
+                    //验证是否为图片，不是就跳出循环
+                    if (!(/^image\/.*$/i.test(file.type))) {
+                        alert("请选择图片上传！")
+                        continue;
+                    }
+                    //实例化FileReader API  
+                    var freader = new FileReader();
+                    freader.readAsDataURL(file);
+                    freader.onload = function (e) {
+                        $('.apply_uploading_img').eq(0).attr('src',e.target.result)
+                    }
+                    $("#img").val('');
+                }
+            });
+            $("#img1").change(function (e) {
+                for (var i = 0; i < e.target.files.length; i++) {
+                    var file = e.target.files.item(i);
+                    //验证是否为图片，不是就跳出循环
+                    if (!(/^image\/.*$/i.test(file.type))) {
+                        alert("请选择图片上传！")
+                        continue;
+                    }
+                    //实例化FileReader API  
+                    var freader = new FileReader();
+                    freader.readAsDataURL(file);
+                    freader.onload = function (e) {
+                        $('.apply_uploading_img').eq(1).attr('src',e.target.result)
+                    }
+                    $("#img1").val('');
+                }
+            });
+        })
+    </script>
 </body>
 </html>
