@@ -42,7 +42,7 @@
 }
 .mask_content{
     position: absolute;
-    bottom: -100%;
+    bottom: -50%;
     width: 100%;
 }
 .mask_content_title{
